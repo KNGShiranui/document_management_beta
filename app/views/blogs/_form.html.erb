@@ -13,12 +13,14 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.hidden_field :title, id: :post_title %>
+    <trix-editor input="post_title"></trix-editor>
   </div>
 
   <div class="field">
     <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.hidden_field :content, id: :post_content %>
+    <trix-editor input="post_content"></trix-editor>
   </div>
 
   <div class="actions">
