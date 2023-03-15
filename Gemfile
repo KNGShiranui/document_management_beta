@@ -6,6 +6,7 @@ gem 'paper_trail'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'trix-rails', '~> 2.4.0'
+gem 'markdiff'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.7', '>= 6.1.7.3'
