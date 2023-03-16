@@ -2,6 +2,12 @@ require_relative "boot"
 
 require "rails/all"
 
+require "markdiff"
+
+differ = Markdiff::Differ.new
+node = differ.render("<p>a</p>", "<p>b</p>")
+node.to_html #=> '<div class="changed"><p><del>a</del><ins>b</ins></p></div>'
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)

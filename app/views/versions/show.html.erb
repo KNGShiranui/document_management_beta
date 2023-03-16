@@ -12,7 +12,7 @@
     </h1>
     <% @version.changeset.keys.select { |key| %w[name content].include?(key) }.each do |key| %>
       <div class="mb-4">
-        <h3 class=font-weight-bold">
+        <h3 class="font-weight-bold">
           <%= Blog.human_attribute_name(key) %>
         </h3>
         <div>
@@ -22,3 +22,6 @@
     <% end %>
   </div>
 </div>
+
+
+
