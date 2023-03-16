@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_15_114955) do
+ActiveRecord::Schema.define(version: 2023_03_16_050836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,10 @@ ActiveRecord::Schema.define(version: 2023_03_15_114955) do
     t.text "object"
     t.datetime "created_at"
     t.text "object_changes"
+    t.bigint "blog_id"
+    t.index ["blog_id"], name: "index_versions_on_blog_id"
     t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
   end
 
+  add_foreign_key "versions", "blogs"
 end
