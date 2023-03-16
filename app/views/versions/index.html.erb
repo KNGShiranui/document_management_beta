@@ -1,0 +1,26 @@
+<h1>Versions#show</h1>
+<p>Find me in app/views/versions/show.html.erb</p>
+
+
+<div class="row justify-content-md-center">
+  <div class="col-8 p-4">
+    <div class="d-flex justify-content-between mb-3">
+      <%#= link_to "\"#{@blog.name}\"へ戻る", blog_path(@blog) %>
+    </div>
+    <h1 class="font-weight-bold mb-4">
+      差分を表示する
+    </h1>
+    <% @version.each do |version| %>
+      <% version.changeset.keys.select { |key| %w[name content].include?(key) }.each do |key| %>
+        <div class="mb-4">
+          <h3 class="font-weight-bold">
+            <%= Blog.human_attribute_name(key) %>
+          </h3>
+          <div>
+            <%= raw Markdiff::Differ.new.render(*@version.changeset[key]) %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

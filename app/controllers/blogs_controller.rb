@@ -8,6 +8,9 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1 or /blogs/1.json
   def show
+    @version = @blog.versions
+    # binding.pry
+    # .find(params[:version_id])
   end
 
   # GET /blogs/new
